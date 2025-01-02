@@ -6,7 +6,7 @@ This project scrape news from https://www.okx.com/help/category/announcements in
 
 - Install latest version from git repository using pip:
 ```bash
-$ pip install git+https://github.com/alirezamika/autoscraper.git
+$ pip install git+https://github.com/kippusen/okx-news-scraper.git
 ```
 
 - Install from source:
