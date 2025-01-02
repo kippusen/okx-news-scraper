@@ -72,7 +72,6 @@ def download_okx_news(start_date, end_date, folder):
 
     file_path = os.path.join(folder, f"okx_news_{start_date.strftime('%Y%m%d')}_{end_date.strftime('%Y%m%d')}.json")
     current_url = "https://www.okx.com/help/category/announcements"
-    all_news_data = []
     earliest_date = None
 
     session = create_session()
@@ -93,7 +92,8 @@ def download_okx_news(start_date, end_date, folder):
             news_data, page_earliest_date = scrape_page_articles(soup, start_date, end_date)
             current_batch.extend(news_data)
 
-            if earliest_date is None or (page_earliest_date and page_earliest_date < earliest_date):
+            #if earliest_date is None or (page_earliest_date and page_earliest_date < earliest_date):
+            if page_earliest_date:
                 earliest_date = page_earliest_date
 
                 if earliest_date and earliest_date > start_date:
@@ -132,4 +132,4 @@ def write_batch_to_file(batch, file_path):
         logging.error(f"Error writing to file: {e}")
         raise
 
-#download_okx_news(datetime(2024, 12, 15), datetime(2024, 12, 31), 'D:\!Israel work\Eq\Scr\output')
+#download_okx_news(datetime(2023, 2, 1), datetime(2024, 12, 31), './output') #debuggind purpose
