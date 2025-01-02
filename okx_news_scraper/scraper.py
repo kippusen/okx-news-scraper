@@ -1,12 +1,3 @@
-# Project: OKX News Scraper
-# Structure Suggestions:
-# 1. scraper.py - Core scraping logic
-# 2. utils.py - Helper functions
-# 3. main.py - Entry point for CLI
-# 4. setup.py - For installation and versioning
-# 5. requirements.txt - List of dependencies
-
-# First File: scraper.py
 # This contains the main logic of scraping
 import requests
 from bs4 import BeautifulSoup
@@ -141,4 +132,4 @@ def write_batch_to_file(batch, file_path):
         logging.error(f"Error writing to file: {e}")
         raise
 
-download_okx_news(datetime(2020, 10, 1), datetime(2020, 10, 30), './output')
+#download_okx_news(datetime(2024, 12, 15), datetime(2024, 12, 31), 'D:\!Israel work\Eq\Scr\output')
