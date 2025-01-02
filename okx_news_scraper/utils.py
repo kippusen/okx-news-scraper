@@ -5,7 +5,11 @@ def setup_logging():
     """Configure logging settings for the scraper."""
     logging.basicConfig(
         format='%(asctime)s - %(levelname)s - %(message)s',
-        level=logging.INFO
+        level=logging.INFO,
+        handlers=[
+            logging.StreamHandler(),
+            logging.FileHandler('okx_scraper.log')
+        ]
     )
     logging.info("Logging is configured.")
 
